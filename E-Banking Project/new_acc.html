@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Create New Account</title> 
+  <link rel="stylesheet" href="new_acc.css"> 
+</head>
+<body>
+
+<div class="form">
+
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form>
+        <fieldset>
+          <legend>Create New Account</legend>  
+          <br><br>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div> 
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" required>
+          </div> 
+          <div class="form-group">
+            <label for="ph-no">Phone Number :</label>
+            <input type="number" class="form-control" id="ph-no" placeholder="Enter your phone number" required>
+          </div>  
+          <div class="form-group">
+            <label for="uid">Aadhar Number :</label>
+            <input type="number" class="form-control" id="uid" placeholder="Enter your aadhar number" required>
+          </div> 
+          <div class="form-group">
+            <label for="dob">D.O.B</label>   
+            <input type="date" class="form-control" required >  
+        </div>  
+           <div class="form-group">
+            <label for="address">Enter your address : </label>  <br>
+            <textarea  id="address" cols="40" rows="3" placeholder="Write here..."></textarea>
+           </div>   
+
+
+           <div class="select-city form-group">
+            <label for="state-selector">Select City </label>  
+            <select name="state" id="state-selector"> 
+                <option value="tna">Thane</option> 
+                <option value="kal">Kalyan</option>
+                <option value="mum">Mumbai City</option>
+                <option value="mum-sub">Mumbai Suburban</option> 
+                <option value="navimum">Navi Mumbai</option>  
+                <option value="bl">Badlapur</option> 
+            </select>
+        </div>
+        </fieldset> 
+        <button type="submit" class="submit-btn btn btn-primary">Create Account</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

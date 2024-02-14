@@ -1,0 +1,21 @@
+*{
+    font-family: sans-serif; 
+}
+legend{
+    border: 1px solid black ;   
+    border-radius: 6px; 
+    background-color: #ade8f4;  
+    text-align: center;
+}
+.form{
+    width: 800px;  
+    height: 900px ;
+    background-color: antiquewhite;  
+    position: absolute;
+    left: 220px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+} 
+.submit-btn{
+    margin: 15px;
+}
