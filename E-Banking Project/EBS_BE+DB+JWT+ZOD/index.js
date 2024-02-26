@@ -6,12 +6,13 @@ const router = require("./routes");
 const port = 4002;
 
 
-
 const app = express();
+app.use(bodyParser.json());
+
 app.use("/",router);
 
 
-app.use(bodyParser.json());
+
 
 
 
