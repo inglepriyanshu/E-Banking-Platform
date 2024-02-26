@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1> Request New Password Page </h1>
+	<form method = "POST">
+	{% csrf_token %}
+	<input type="email" name="un" placeholder="Enter email" required />
+	<br><br>
+	<input type="submit" value="Send New Password" />
+	</form>
+	<h2> We will email you your new password </h2>
+	<h2> {{ msg }} </h2>
+{% endblock %}

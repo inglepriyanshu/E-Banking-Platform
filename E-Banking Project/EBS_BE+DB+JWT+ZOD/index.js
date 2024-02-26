@@ -1,0 +1,23 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+require("dotenv").config();
+const router = require("./routes");
+
+const port = 4002;
+
+
+
+const app = express();
+app.use("/",router);
+
+
+app.use(bodyParser.json());
+
+
+
+
+app.listen(port,()=>
+{
+    console.log(`Server running at port ${port}`);
+
+});
