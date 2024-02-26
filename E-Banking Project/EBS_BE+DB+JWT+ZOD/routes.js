@@ -1,35 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const User = require("./db");
-const userMiddleware = require("./middleware");
+const {userMiddleware} = require("./middleware");
+const {validateUserInput} = require("./middleware");
 const jwt = require("jsonwebtoken");
-const zod = require("zod");
+
 require("dotenv").config();
 
-const passwordSchema = zod
-  .string()
-  .min(8, 'Password must be at least 8 characters long')
-  .regex(/.*(?=[A-Z])/, 'Password must contain at least one uppercase letter')
-  .regex(/.*(?=\d)/, 'Password must contain at least one digit');
 
-router.post("/signup",async (req,res)=>
+router.post("/signup",validateUserInput, async (req,res)=>
 {
     const  name = req.body.name;
     const password = req.body.password;
     const email = req.body.email;
     const ac_no = req.body.ac_no;
 
-
-    const validationResult = passwordSchema.safeParse(password);
-     if (!validationResult.success) {
-        let errorMsg = "Your password is invalid: " ;
-        validationResult.error.errors.forEach(errorMessage => {
-          errorMsg = errorMsg+ errorMessage.message + ". ";
-        });
-        return res.json({
-            msg : errorMsg
-        })
-      }
 
     const token = jwt.sign(password, process.env.JWT_KEY);
    const response = await User.findOne({
