@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#main_section{
+    margin-bottom: 50px;
+}
+
+#image_sec {
+    width: 100%;
+    height: 120px;
+
+}
+
+#img {
+    width: 100%;
+    height: 400px;
+    background-image: url("https://img.freepik.com/premium-photo/businessman-touches-online-banking-network-connection-icons-online-payment-icons-virtual-screen-internet-online-banking-pay-concept_35148-7704.jpg?w=996 ");
+    background-size: cover; 
+     border-bottom-left-radius: 30px;  
+    border-bottom-right-radius: 30px;   
+    filter: blur(0.9px); 
+}
+
+#heading {
+    position: absolute;
+    top: 20px;
+    font-family: Arial;
+}
+
+#acc_form {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;  
+    position: relative; 
+    bottom: 50px;  
+    height: 450px;   
+}
+
+
+#form { 
+    width: 400px;
+    height: 440px;  
+    position: relative;
+    top: 400px;  
+    border: 1px solid black;      
+    box-shadow: 10px 15px 25px black;
+}
+
+.form-con{
+    position: relative;
+    left: 100px;
+}
+
+#form input {
+    width: 192px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #0066cc;
+}
+
+#new_acc {
+    margin-bottom: 120px;
+}
+#new_acc h1{
+    color: whitesmoke; 
+    position: relative; 
+    left: 500px; 
+    top: -80px;
+}
+
+
+h6{
+    position: relative;
+    top: 80px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1.5px solid green; 
+    left: 140px;  
+    text-align: center; 
+    background-color: #0066cca8; 
+    color: white; 
+    font-size: x-large;
+}
+
+
+h6:hover{
+    cursor:pointer;  
+    background-color: greenyellow; 
+    color: black;  
+    transition: 0.8s ease-in-out;  
+}
+
+h1{
+    width: 240px; 
+    height: 60px;
+}
