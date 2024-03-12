@@ -23,9 +23,11 @@ router.post("/signup",validateUserInput, async (req,res)=>
         ac_no,
         email
     })
+
     if(response)
     {
-        res.status(409).json({
+        res.setHeader('Content-Type', 'application/json');
+        res.json({
             msg :"User already exists"
         })
     }
@@ -38,7 +40,9 @@ router.post("/signup",validateUserInput, async (req,res)=>
         email,
         password:token
       });
-      res.status(200).send("You have signed up successfully. Your token is" + token)
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json({msg: "You have signed up successfully!",
+                            token: token})
         }
         catch(e){
             res.json({
