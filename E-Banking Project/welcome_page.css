@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Content 1 */ 
+
+#img{
+    width: 180px;   
+    height: 140px;   
+    background-image: url("logo.png");  
+    background-size: cover; 
+}
+#navbar {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+#navbar a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Times New Roman';
+    padding: 5px;
+} 
+
+#navbar a:hover {
+    background-color:  #0066cc;  
+    color: white; 
+    font-size: 300;  
+    font-weight: 600;
+    border: 1px solid black;
+    border-radius: 3px;
+    transition: 0.5s ease-in ;  
+}
+ 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #1080f0 ; 
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px #0c335a;
+}
+
+.button:hover {
+    background-color: #0281ffc7;
+}
+ 
+#content2{
+    width: 626px; 
+    height: 90px; 
+    position: relative;
+    left: 336px;
+    top: 200px;  
+    bottom: 200px;
+}  
+
+#welcome_img{
+    width: 100%; 
+    height:  500px;   
+    background-image: url("welcome_img.jpg");  
+    background-size: cover;  
+    position: relative; 
+    top: 50px ;  
+    
+}  
+ 
+#welcome-message{    
+    width: 100px;
+    position: relative;  
+    top: 30px;     
+    left: 80px;
+}
