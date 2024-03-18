@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;  
+    background-color: white;
+  }
+  
+  .transfer-form {   
+    width: 430px ; 
+    height: 390px; 
+    position: relative; 
+    left: 110px;
+    top: 70px;
+    background-color: #f8f8f0; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 05px 10px 10px rgba(0, 0, 0, 0.1); 
+    
+  }
+  
+  .transfer-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0050a3;
+  } 
+
+#fromAccount , #toAccount , #beneficiaryName {
+    width: 190px;
+} 
+
+#img{
+    width: 630px;  
+    height: 555px;  
+    position: relative;  
+    left: 180px;
+    background-image: url("fund_transfer_img.avif"); 
+    background-size: cover;
+}
+   
+#content{
+    display: flex; 
+
+}
