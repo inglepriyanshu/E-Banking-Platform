@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome</title>
-    <link rel="stylesheet" href="welcome.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Welcome to Our Banking Service!</h2>
-        <p>We're excited to have you on board.</p>
-        <p>Explore our features and start managing your finances today.</p>
-       
-    </div>
-</body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="welcome.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="logo_crop.png" alt="Bank Logo" />
+        </div>
+        <ul>
+          <!-- <li><a href="#">Home</a></li> -->
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="background-image"></section>
+
+    <section class="welcome-section">
+      <h1 id="welcome-message"></h1>
+    </section>
+
+    <section class="options-section">
+      <div class="options-container">
+        <a href="account_overview.html" class="option">
+          <button class="button">Account Overview</button>
+        </a>
+        <a href="fund.html" class="option">
+          <button class="button">Fund Transfer</button>
+        </a>
+        <a href="loan.html" class="option">
+          <button class="button">Loan</button>
+        </a>
+      </div>
+    </section>
+
+    <script src="./welcome.js"></script>
+  </body>
 </html>

@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(240, 240, 240, 0.8); /* Set background color with transparency */
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    padding: 20px 0;
+    position: fixed; /* Keep the header fixed at the top */
+    width: 100%; /* Take up full width */
+    z-index: 1000; /* Ensure the header is above other elements */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.background-image {
+    background-image: url('./welcome_bg.jpg'); /* Add the path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjust as needed */
+    width: 100%; /* Take up full width */
+    position: fixed; /* Fix the image in the background */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the background behind other elements */
+    opacity: 0.5; /* Adjust the opacity for transparency */
+}
+
+.account-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Vertical centering */
+}
+
+.account-details {
+    background-color: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 190px;
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+.title {
+    font-size: 36px; /* Increased font size */
+    font-family: 'Poppins', sans-serif; /* Different font */
+    font-weight: bold; /* Added font weight */
+    margin-bottom: 20px; /* Reduced margin */
+    color: #333; /* Darker color for the title */
+}
+
+.account-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.account-list li {
+    font-size: 18px;
+    margin-bottom: 20px; /* Increased margin */
+}
+
+.account-list span {
+    font-weight: normal; /* Changed font weight */
+    font-family: 'Arial', sans-serif; /* Different font for key elements */
+    color: #666; /* Slightly lighter color for the keys */
+}

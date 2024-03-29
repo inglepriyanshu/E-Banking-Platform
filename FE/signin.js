@@ -12,17 +12,29 @@ function submitForm() {
     })
     .then(response => {
         if (response.ok) {
-            // Redirect to welcome.html upon successful sign-in
-            window.location.href = 'welcome.html';
-        } else {
+            // Extract the token from the response
             return response.json();
+        } else {
+            return response.json().then(data => {
+                throw new Error(data.msg || 'Sign-in failed. Please try again.');
+            });
         }
     })
     .then(data => {
-        if (data && data.msg) {
-            // Display the message below the sign-in button
+        if (data && data.user) {
+            // Store the token in the browser's local storage
+            localStorage.clear();
+            localStorage.setItem('name', data.user.name);
+            localStorage.setItem('ac_no', data.user.ac_no);
+            localStorage.setItem('email', data.user.email);
+            localStorage.setItem('password',data.user.password);
+            // console.log(data.user);
+            // Redirect to welcome.html upon successful sign-in
+            window.location.href = 'welcome.html';
+        } else {
+            // Display default error message
             const responseMessage = document.getElementById('responseMessage');
-            responseMessage.innerHTML = `<p>${data.msg}</p>`;
+            responseMessage.innerHTML = `<p>Sign-in failed. Please try again.</p>`;
             responseMessage.style.display = 'block'; // Show the message box
         }
     })

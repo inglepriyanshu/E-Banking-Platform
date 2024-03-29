@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Overview</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="account_overview.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img src="logo.png" alt="Bank Logo" />
+        </div>
+        <ul>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="background-image"></div>
+
+    <section class="account-section">
+      <div class="account-details">
+        <h1 class="title">Account Overview</h1><br>
+        <ul class="account-list">
+          <li>Name: <span id="name"></span></li>
+          <li>Account Number: <span id="account-number"></span></li>
+          <li>Balance: <span id="balance"></span></li>
+          <li>Loan Amount: <span id="loan-amount"></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="./account_overview.js"></script>
+  </body>
+</html>

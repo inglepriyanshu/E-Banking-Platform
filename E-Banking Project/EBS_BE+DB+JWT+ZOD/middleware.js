@@ -2,6 +2,8 @@ const User = require("./db");
 const jwt = require("jsonwebtoken")
 require("dotenv").config();
 const z = require('zod');
+const {generateToken} = require("./jwtUtils");
+const {verifyToken} = require("./jwtUtils");
 
 const passwordSchema = z.string()
     .min(8, 'Password must be at least 8 characters long')
@@ -14,33 +16,33 @@ const accountNumberSchema = z.string().length(5, 'Account number must be 5 digit
 
 
 async function userMiddleware(req, res, next) {
-   try{ const email = req.headers.email;
-    const password = req.headers.password;
-    
-    const passToken = jwt.sign(password,process.env.JWT_KEY);
-    
-    const response = await User.findOne({
-       email: email,
-        password: passToken
-    })
-if(response)
-{
-    next();
-} 
-else{
-    res.status(401).json({
-        msg: "User does not exist"
-    });
-} 
-}
-catch(e)
-{
-    res.status(500).json({
-        msg: "Internal server error"
-    })
-}
-}
-
+    try {
+         const email = req.headers.email;
+         const password = req.headers.password;
+         
+         const passToken = jwt.sign(password, process.env.JWT_KEY);
+         
+         const response = await User.findOne({
+             email: email,
+             password: passToken
+         });
+ 
+         if(response) {
+             // Attach user object to the request for later use
+             req.user = response;
+             next();
+         } else {
+             res.status(401).json({
+                 msg: "User does not exist"
+             });
+         } 
+     } catch(e) {
+         res.status(500).json({
+             msg: "Internal server error"
+         });
+     }
+ }
+ 
 
 
 const validateUserInput = (req, res, next) => {

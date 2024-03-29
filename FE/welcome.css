@@ -1,25 +1,133 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Subtle grey background */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
 }
 
-.container {
-    max-width: 380px; /* Adjust the maximum width */
-    margin: 20px auto; /* Center the container */
-    background-color: #f8f8f0; /* Light grey background */
-    padding: 15px; /* Add some padding */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a shadow */
-    text-align: center; /* Center align content */
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    padding: 20px 0;
+    position: fixed; /* Keep the header fixed at the top */
+    width: 100%; /* Take up full width */
+    z-index: 1000; /* Ensure the header is above other elements */
 }
 
-h2 {
-    color: #333; /* Dark text color */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-p {
-    color: #666; /* Lighter text color */
+.logo img {
+    width: 150px;
+    height: auto;
 }
 
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.background-image {
+    background-image: url('./welcome_bg.jpg'); /* Add the path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjust as needed */
+    width: 100%; /* Take up full width */
+    position: fixed; /* Fix the image in the background */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the background behind other elements */
+    opacity: 0.5; /* Adjust the opacity for transparency */
+}
+
+.welcome-section {
+    text-align: center;
+    padding-top: 225px; /* Adjust vertical padding */
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 50px;
+}
+
+#welcome-message {
+    font-size: 36px;
+    color: #fff; /* Change text color to white */
+}
+
+.options-section {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.option {
+    margin: 10px;
+}
+
+.button {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button {
+    width: 200px; /* Set a fixed width for all buttons */
+    padding: 12px 0; /* Adjust padding as needed */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.option {
+    margin: 10px;
+    width: 100%; /* Make each option take up full width */
+    text-align: center; /* Center the button within the container */
+}
+#welcome-message {
+    font-size: 36px;
+    color: #fff; /* Change text color to white */
+    margin-top: 50px; /* Add margin to the top */
+}

@@ -4,6 +4,8 @@ const User = require("./db");
 const {userMiddleware} = require("./middleware");
 const {validateUserInput} = require("./middleware");
 const jwt = require("jsonwebtoken");
+const {generateToken} = require("./jwtUtils");
+const {verifyToken} = require("./jwtUtils");
 
 require("dotenv").config();
 
@@ -52,9 +54,19 @@ router.post("/signup",validateUserInput, async (req,res)=>
     }
     })
 
-router.post("/signin",userMiddleware,async (req,res)=>
-{       res.status(200).json({
-            msg: "You have signed in successfully"});
-})
+    router.post("/signin", userMiddleware, async (req, res) => {
+        try {
+            const user = req.user;
+    
+            // Generate JWT token for authentication
+            // const token = generateToken(user);
+    
+            // Send token in response
+            res.status(200).json({ user });
+        } catch (error) {
+            console.error('Error:', error);
+            res.status(500).json({ msg: "Internal server error" });
+        }
+    });
 
 module.exports = router;
