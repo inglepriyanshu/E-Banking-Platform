@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(240, 240, 240, 0.8); /* Set background color with transparency */
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    padding: 20px 0;
+    position: fixed; /* Keep the header fixed at the top */
+    width: 100%; /* Take up full width */
+    z-index: 1000; /* Ensure the header is above other elements */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.background-image {
+    /* Background image properties */
+    background-image: url('./welcome_bg.jpg'); /* Add the path to your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjust as needed */
+    width: 100%; /* Take up full width */
+    position: fixed; /* Fix the image in the background */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the background behind other elements */
+    opacity: 0.5; /* Adjust the opacity for transparency */
+}
+
+
+.fund-transfer-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Vertical centering */
+}
+
+.transfer-form {
+    background-color: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px; /* Increased padding */
+    border-radius: 10px;
+    margin-top: 150px;
+}
+
+h2 {
+    font-size: 36px; /* Increased font size */
+    font-family: 'Poppins', sans-serif; /* Different font */
+    margin-bottom: 30px; /* Increased margin */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.message-box {
+    background-color: #d4edda; /* Green background color */
+    color: #155724; /* Dark green text color */
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #c3e6cb; /* Green border */
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+  }
+  
+  .message {
+    margin: 0;
+  }
+  
+
+

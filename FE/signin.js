@@ -28,6 +28,8 @@ function submitForm() {
             localStorage.setItem('ac_no', data.user.ac_no);
             localStorage.setItem('email', data.user.email);
             localStorage.setItem('password',data.user.password);
+            localStorage.setItem('balance',data.user.balance);
+            localStorage.setItem('loan_amount',data.user.loan_amount);
             // console.log(data.user);
             // Redirect to welcome.html upon successful sign-in
             window.location.href = 'welcome.html';

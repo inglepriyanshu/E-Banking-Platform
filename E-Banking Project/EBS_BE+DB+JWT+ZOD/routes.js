@@ -40,7 +40,10 @@ router.post("/signup",validateUserInput, async (req,res)=>
         name,
         ac_no,
         email,
-        password:token
+        password:token,
+        balance:50000,
+        loan_amount:0
+
       });
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json({msg: "You have signed up successfully!",
@@ -68,5 +71,53 @@ router.post("/signup",validateUserInput, async (req,res)=>
             res.status(500).json({ msg: "Internal server error" });
         }
     });
+
+    router.get("/names",async (req,res)=>
+    {
+        try {
+            // Query the MongoDB database to fetch all names
+            const names = await User.find({}, 'name');
+    
+            // Extract the names from the query result
+            const nameList = names.map(user => user.name);
+    
+            // Send the list of names as a response
+            res.json(nameList);
+        } catch (error) {
+            // Handle any errors that occur during the process
+            console.error('Error fetching names:', error);
+            res.status(500).json({ message: 'Internal server error' });
+        }
+    })
+
+    router.post("/fund-transfer", async(req,res)=>
+    {
+        const toName = req.headers.toname;
+        const fromName = req.headers.fromname;
+        const amountStr = req.headers.amount;
+        const amount = parseInt(amountStr);
+
+        const fromDoc = await User.findOne({name: fromName});
+        const toDoc = await User.findOne({name:toName});
+
+        if(fromDoc.balance<amount)
+        {
+            return res.status(403).json({msg:"Insufficient Balance"});
+        }
+
+        fromDoc.balance = parseInt(fromDoc.balance)- amount;
+        toDoc.balance = parseInt(toDoc.balance) + amount;
+    
+        try {
+            await fromDoc.save();
+            await toDoc.save();
+            return res.status(200).json({ msg: "Transaction successful" });
+        } catch (error) {
+            console.error("Error saving documents:", error);
+            return res.status(500).json({ msg: "Internal server error" });
+        }
+    
+
+    })
 
 module.exports = router;
