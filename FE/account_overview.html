@@ -17,8 +17,23 @@
           <img src="logo.png" alt="Bank Logo" />
         </div>
         <ul>
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#">Account</a>
+            <div class="dropdown-content">
+              <a href="./fund_transfer.html">Fund Transfer</a>
+              <a href="./loan.html">Loan Application</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">More</a>
+            <div class="dropdown-content">
+              <a href="about_us.html">About Us</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </li>
+          <li>
+            <a href="./signout.html" class="sign-out-btn">Sign Out</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -27,7 +42,8 @@
 
     <section class="account-section">
       <div class="account-details">
-        <h1 class="title">Account Overview</h1><br>
+        <h1 class="title">Account Overview</h1>
+        <br />
         <ul class="account-list">
           <li>Name: <span id="name"></span></li>
           <li>Account Number: <span id="account-number"></span></li>

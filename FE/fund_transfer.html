@@ -17,14 +17,28 @@
           <img src="logo.png" alt="Bank Logo" />
         </div>
         <ul>
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#">Account</a>
+            <div class="dropdown-content">
+              <a href="./account_overview.html">Account Overview</a>
+              <a href="./loan.html">Loan Application</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="#">More</a>
+            <div class="dropdown-content">
+              <a href="about_us.html">About Us</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </li>
+          <li>
+            <a href="./signout.html" class="sign-out-btn">Sign Out</a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <div class="background-image"></div>
-    <!-- Placeholder for background image -->
 
     <section class="fund-transfer-section">
       <div class="transfer-form">
@@ -43,7 +57,6 @@
           <button type="submit" id="button">Transfer</button>
         </form>
         <div class="message-box" id="message-box"></div>
-        <!-- Placeholder for message box -->
       </div>
     </section>
 

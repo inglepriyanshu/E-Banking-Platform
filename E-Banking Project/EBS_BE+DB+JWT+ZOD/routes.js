@@ -120,4 +120,25 @@ router.post("/signup",validateUserInput, async (req,res)=>
 
     })
 
+    router.post("/loan", async (req, res) => {
+        try {
+            const name = req.headers.name;
+            const loanAmountStr = req.body.loanAmount; // Parse loan amount from the request body
+            const loanAmount = parseInt(loanAmountStr);
+    
+            const user = await User.findOne({ name: name });
+            if (!user) {
+                return res.status(404).json({ error: "User not found" });
+            }
+    
+            user.loan_amount = parseInt(user.loan_amount) + loanAmount;
+            await user.save();
+    
+            return res.status(200).json({ message: "Loan amount updated successfully" });
+        } catch (error) {
+            console.error(error);
+            return res.status(500).json({ error: "Internal server error" });
+        }
+    });
+    
 module.exports = router;

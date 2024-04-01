@@ -2,15 +2,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: rgba(240, 240, 240, 0.8); /* Set background color with transparency */
+    background-color: rgba(240, 240, 240, 0.8);
 }
 
 header {
-    background-color: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px 0;
-    position: fixed; /* Keep the header fixed at the top */
-    width: 100%; /* Take up full width */
-    z-index: 1000; /* Ensure the header is above other elements */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar {
@@ -36,54 +36,104 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin-right: 20px;
+    position: relative;
 }
 
 nav ul li:last-child {
     margin-right: 0;
 }
 
-a {
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 10px;
+    margin-top: -12px; /* Adjusted margin */
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
     color: #333;
     text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.sign-out-btn {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.sign-out-btn:hover {
+    background-color: #c82333;
 }
 
 .background-image {
-    background-image: url('./welcome_bg.jpg'); /* Add the path to your background image */
+    background-image: url('./welcome_bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh; /* Adjust as needed */
-    width: 100%; /* Take up full width */
-    position: fixed; /* Fix the image in the background */
+    height: 100vh;
+    width: 100%;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: -1; /* Place the background behind other elements */
-    opacity: 0.5; /* Adjust the opacity for transparency */
+    z-index: -1;
+    opacity: 0.5;
 }
 
 .account-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Vertical centering */
+    height: 100vh;
 }
 
 .account-details {
-    background-color: rgba(255, 255, 255, 0.8); /* Increase transparency */
+    background-color: rgba(255, 255, 255, 0.8);
     max-width: 600px;
     margin: 0 auto;
     margin-top: 150px;
-    padding: 40px; /* Increased padding */
+    padding: 40px;
     border-radius: 10px;
     padding-top: 20px;
     padding-bottom: 60px;
 }
 
 .title {
-    font-size: 36px; /* Increased font size */
-    font-family: 'Poppins', sans-serif; /* Different font */
-    font-weight: bold; /* Added font weight */
-    margin-bottom: 20px; /* Reduced margin */
-    color: #333; /* Darker color for the title */
+    font-size: 36px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .account-list {
@@ -93,11 +143,11 @@ a {
 
 .account-list li {
     font-size: 18px;
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 20px;
 }
 
 .account-list span {
-    font-weight: normal; /* Changed font weight */
-    font-family: 'Arial', sans-serif; /* Different font for key elements */
-    color: #666; /* Slightly lighter color for the keys */
+    font-weight: normal;
+    font-family: 'Arial', sans-serif;
+    color: #666;
 }
